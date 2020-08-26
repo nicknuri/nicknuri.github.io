@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 
     
     
-    if(sendemail($to='burkhonov.nuriddin@gmail.com' , $name, $email, $subject, $message)){
+    if(sendemail($to='26082@hsrw.org' , $name, $email, $subject, $message)){
         echo "<h1>Sent successfully! I will contact you soon! </h1>";
 
     }else{
