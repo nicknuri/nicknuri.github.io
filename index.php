@@ -1,6 +1,64 @@
+<?php
+
+$error = "";
+$success = "";
+
+if($_POST){
+
+	if(!$_POST["name"]){
+
+		$error .= "- The name field is empty.<br>";
+	}
+	
+	if(!$_POST["email"]){
+
+		$error .= "- The email field is empty.<br>";
+	} else if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)=== false) {
+		
+				$error .= "The <strong>email address</strong> is invalid. <br>";
+		
+	}
+
+	if(!$_POST["subject"]){
+
+		$error .= "- The subject field is empty.<br>";
+	}
+	if(!$_POST["message"]){
+
+		$error .= "- The message field is empty.<br>";
+	}
+
+
+	if($error != ""){
+
+		$error = '<div class="alert alert-danger" role="alert"> <p> <strong>Change a few things up and try submitting the form again!</strong> </p>'.$error. '</div>';
+	
+	}
+	else{
+
+		$emailTo = "burkhonov.nuriddin@gmail.com";
+		$sender = $_POST['name'];
+		$subject = $_POST['subject'];
+		$message = $_POST['message'];
+		$headers = "From:   ".$_POST['email'];
+
+		if(mail($emailTo, $sender, $subject, $message, $headers)){
+
+			$success = '<div class="alert alert-success" role="alert"> <p>Your message was sent. I\'ll get back to you soon!</p> </div>';
+		}else{
+
+			$error = '<div class="alert alert-danger" role="alert"> <p>Your message could not be sent. Try again later!</p></div>';
+		}
+	}
+
+}
+
+
+?>
+
 <!DOCTYPE HTML>
 <html>
-	<head>
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Nuriddin's Portfolio</title>
@@ -30,8 +88,8 @@
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	 <!-- Bootstrap CSS -->
+	 <link rel="stylesheet" href="css/bootstrap.css">
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="css/flexslider.css">
 	<!-- Flaticons  -->
@@ -49,10 +107,13 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
-	</head>
+</head>
 	<body>
+		
+		
 	<div id="colorlib-page">
 		<div class="container-wrap">
+		<div><? echo $error.$success  ?></div>
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 			<div class="text-center">
@@ -143,7 +204,7 @@
 									<div class="about-desc">
 										<span class="heading-meta">About Me</span>
 										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p><strong>I'm Nuriddin Burkhonov.</strong> I am a family man and a Mechanical Engineering student at Rhine-Waal University of Applied Sciences, who is in the last year of the study. I am originally from Uzbekistan and currently living and studying in Germany. I am really passionate about mastering Digital transformation, i.e. the Fourth Industrial Revolution, Artificial Intelligence, Cognitive Technology, Leading with Innovation, Internet of Things, Design Thinking, Design Research, and Machine Learning for Marketing. I am very welcome to obstacles on the way of achievements.</p>
+										<p><strong>I'm Nuriddin Burkhonov.</strong> I'm Nuriddin Burkhonov. I am a family man and a Mechanical Engineering student at Rhine-Waal University of Applied Sciences, who is in the last year of the study. I am originally from Uzbekistan and currently living and studying in Germany. I am really passionate about mastering Digital transformation, i.e. the Fourth Industrial Revolution, Artificial Intelligence, Cognitive Technology, Leading with Innovation, Internet of Things, Design Thinking, Design Research, and Machine Learning for Marketing. I am very welcome to obstacles on the way of achievements.</p>
 										<p>Even if I am currently enrolled as a master of science student. I have already gained some experience in Automotive production and the Global Manufacturing system of General Motors.</p>
 									</div>
 								</div>
@@ -683,30 +744,30 @@
 					<div class="row">
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/blog-1.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="myblog/index.html" class="blog-img"><img src="images/blog-1.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small>June, 2020 </small> | <small> Artificial Intelligence </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">The main role of Artificial Intelegence in the quality control of lean production</a></h3>
+									<h3><a href="myblog/index.html">The main role of Artificial Intelegence in the quality control of lean production</a></h3>
 									<p>The artificial intelegance id one of the key factors in the fourth technological revolution.</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
 							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/blog-2.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="myblog/index.html" class="blog-img"><img src="images/blog-2.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small>March, 2020 </small> | <small> Software Development </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">GitHub student pack access</a></h3>
+									<h3><a href="myblog/index.html">GitHub student pack access</a></h3>
 									<p>In this blog I am going to quickly describe how to get access to the student pack of the GitHub.</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="blog-entry">
-								<a href="blog.html" class="blog-img"><img src="images/blog-3.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="myblog/index.html" class="blog-img"><img src="images/blog-3.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small>February 14, 2020 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
-									<h3><a href="blog.html">Make website from scratch</a></h3>
+									<h3><a href="myblog/index.html">Make website from scratch</a></h3>
 									<p>How to make a portfolio website using Visual Studio Code.</p>
 								</div>
 							</div>
@@ -715,7 +776,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+							<p><a href="myblog/index.html" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
 						</div>
 					</div>
 				</div>
@@ -758,30 +819,43 @@
 								</div>
 							</div>
 						</div>
+						
+						<!-- Contact form PHP external usage -->
+
+						
+
+						
 						<div class="col-md-7 col-md-push-1">
+							
 							<div class="row">
 								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="contact.php" method="post" name="form" class="form-box">
+									
+									<div id="error"></div>
+									<form  method="post" >
 										<div class="form-group">
-											<input type="text" name="name" class="form-control" placeholder="Name">
+											<input type="text" id="name" name="name" class="form-control" placeholder="Name">
 										</div>
 										<div class="form-group">											
-											<input type="text" name="email" class="form-control" placeholder="Email">
+											<input type="email" id="email" name="email" class="form-control" placeholder="Email">
+											
 										</div>
 										<div class="form-group">											
-											<input type="text" name="subject" class="form-control" placeholder="Subject">
+											<input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
 										</div>
 										<div class="form-group">											
-											<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+											<textarea id="message" name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+											<small id="emailHelp" class="form-text text muted">Your contact details will never be shared with anyone else</small>
 										</div>
-										<div class="form-group">
-											<input type="submit" name="submit" class="btn btn-primary btn-send-message" value="Send Message">
-										</div>
+
+										<button type="submit" name="submit" id="submit" class="btn btn-primary">Send Message</button>
 									</form>
+
 								</div>
 								
 							</div>
 						</div>
+
+
 						
 					</div>
 				</div>
@@ -795,6 +869,7 @@
 		</div><!-- end:colorlib-main -->
 	</div><!-- end:container-wrap -->
 	</div><!-- end:colorlib-page -->
+
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -814,6 +889,42 @@
 	
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+
+	<script type="text/javascript">
+
+		$("form").submit(function(e){
+
+			var error = "";
+
+			if($("#name").val()== ""){
+				error += "- The name field is empty.<br>";
+			}
+			if($("#email").val()== ""){
+				error += "- The email field is empty.<br>";
+			}
+			if($("#subject").val()== ""){
+				error += "- The subject field is empty.<br>";
+			}
+			if($("#message").val()== ""){
+				error += "- The message field is empty.<br>";
+			}
+
+
+			if(error != ""){
+
+				$("#error").html('<div class="alert alert-danger" role="alert"> <p> <strong>Change a few things up and try submitting the form again!</strong> </p>'+ error + '</div>');
+
+				return false;
+			}else{
+				return true;
+			}
+
+
+
+
+		});													
+
+	</script>
 	
 
 	</body>
