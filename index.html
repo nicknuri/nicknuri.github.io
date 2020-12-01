@@ -9,14 +9,14 @@ if($_POST){
 
 		$error .= "- The name field is empty.<br>";
 	}
-	
+
 	if(!$_POST["email"]){
 
 		$error .= "- The email field is empty.<br>";
 	} else if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)=== false) {
-		
+
 				$error .= "The <strong>email address</strong> is invalid. <br>";
-		
+
 	}
 
 	if(!$_POST["subject"]){
@@ -32,7 +32,7 @@ if($_POST){
 	if($error != ""){
 
 		$error = '<div class="alert alert-danger" role="alert"> <p> <strong>Change a few things up and try submitting the form again!</strong> </p>'.$error. '</div>';
-	
+
 	}
 	else{
 
@@ -83,7 +83,7 @@ if($_POST){
 
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -109,8 +109,8 @@ if($_POST){
 
 </head>
 	<body>
-		
-		
+
+
 	<div id="colorlib-page">
 		<div class="container-wrap">
 		<div><? echo $error.$success  ?></div>
@@ -138,18 +138,18 @@ if($_POST){
 				<div class="colorlib-footer">
 
 					<p>Let us be social</p>
-				
+
 					<ul class="list">
 						<li><a href="https://www.facebook.com/nuriddin.burhonov?ref=bookmarks"><i class="icon-facebook2"></i></a></li>
 						<li><a href="https://github.com/"><i class="icon-github"></i></a></li>
 						<li><a href="https://www.instagram.com/nuriddin.burkhonov/?hl=en"><i class="icon-instagram"></i></a></li>
 					</ul>
-	
+
 				</div>
 				<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="nuriddin-burkhonov-045369148"><a class="LI-simple-link" href='https://de.linkedin.com/in/nuriddin-burkhonov-045369148?trk=profile-badge'>Nuriddin Burkhonov</a></div>
 			</nav>
-			
+
 
 
 		</aside>
@@ -190,7 +190,7 @@ if($_POST){
 					   		</div>
 				   		</div>
 					   </li>
-					 
+
 				  	</ul>
 			  	</div>
 			</section>
@@ -249,7 +249,7 @@ if($_POST){
 			</section>
 
 
-			
+
 			<section class="colorlib-services" data-section="services">
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -303,7 +303,7 @@ if($_POST){
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-md-4 text-center animate-box">
 							<div class="services color-6">
 								<span class="icon">
@@ -318,7 +318,7 @@ if($_POST){
 					</div>
 				</div>
 			</section>
-			
+
 			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="colorlib-narrow-content">
@@ -333,7 +333,7 @@ if($_POST){
 							<span class="colorlib-counter js-counter" data-from="0" data-to="17" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="colorlib-counter-label">Projects</span>
 						</div>
-						
+
 						<div class="col-md-3 text-center animate-box">
 							<span class="colorlib-counter js-counter" data-from="0" data-to="42" data-speed="5000" data-refresh-interval="50"></span>
 							<span class="colorlib-counter-label">Skill Improving Events</span>
@@ -468,7 +468,7 @@ if($_POST){
 									            <p>I have finished my Bachelor degree in Mechanical Engineering  at Turin Polytechnic University with <strong>96 (66 and 110 being minimum and maximum grades)</strong>, </p>
 													<ul>
 														<li>To see the transcript of my records click on the link <a href="https://sid.polito.it/TinyUrl-1.0/verifypdf/pdf.html?url=KjYMNNuhGtb" target="_blank">Diploma Supplement</a></li>
-														
+
 													</ul>
 									        </div>
 									    </div>
@@ -482,7 +482,7 @@ if($_POST){
 									    </div>
 									    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 									        <div class="panel-body">
-									            <p>I have finished a vocational college with <strong>red diploma</strong>, which means A+ in my country.</p>	
+									            <p>I have finished a vocational college with <strong>red diploma</strong>, which means A+ in my country.</p>
 									        </div>
 									    </div>
 									</div>
@@ -496,7 +496,7 @@ if($_POST){
 									    </div>
 									    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 									        <div class="panel-body">
-									            <p>I was quite good at lycium, too, and I finished with <strong>red diploma</strong>.</p>	
+									            <p>I was quite good at lycium, too, and I finished with <strong>red diploma</strong>.</p>
 									        </div>
 									    </div>
 									</div>
@@ -510,7 +510,7 @@ if($_POST){
 									    </div>
 									    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
 									        <div class="panel-body">
-									            <p>I studiad till <strong>the 8th form</strong>, at the school in hometown.</p>	
+									            <p>I studiad till <strong>the 8th form</strong>, at the school in hometown.</p>
 									        </div>
 									    </div>
 									</div>
@@ -740,7 +740,7 @@ if($_POST){
 							<h2 class="colorlib-heading">Recent Blog</h2>
 						</div>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="blog-entry">
@@ -772,7 +772,7 @@ if($_POST){
 								</div>
 							</div>
 						</div>
-					
+
 					</div>
 					<div class="row">
 						<div class="col-md-12 animate-box">
@@ -819,30 +819,30 @@ if($_POST){
 								</div>
 							</div>
 						</div>
-						
+
 						<!-- Contact form PHP external usage -->
 
-						
 
-						
+
+
 						<div class="col-md-7 col-md-push-1">
-							
+
 							<div class="row">
 								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									
+
 									<div id="error"></div>
 									<form  method="post" >
 										<div class="form-group">
 											<input type="text" id="name" name="name" class="form-control" placeholder="Name">
 										</div>
-										<div class="form-group">											
+										<div class="form-group">
 											<input type="email" id="email" name="email" class="form-control" placeholder="Email">
-											
+
 										</div>
-										<div class="form-group">											
+										<div class="form-group">
 											<input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
 										</div>
-										<div class="form-group">											
+										<div class="form-group">
 											<textarea id="message" name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
 											<small id="emailHelp" class="form-text text muted">Your contact details will never be shared with anyone else</small>
 										</div>
@@ -851,20 +851,20 @@ if($_POST){
 									</form>
 
 								</div>
-								
+
 							</div>
 						</div>
 
 
-						
+
 					</div>
 				</div>
-				
-			
+
+
 			</section>
-			
-		
-		  
+
+
+
 
 		</div><!-- end:colorlib-main -->
 	</div><!-- end:container-wrap -->
@@ -885,8 +885,8 @@ if($_POST){
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- Counters -->
 	<script src="js/jquery.countTo.js"></script>
-	
-	
+
+
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
 
@@ -922,11 +922,10 @@ if($_POST){
 
 
 
-		});													
+		});
 
 	</script>
-	
+
 
 	</body>
 </html>
-
