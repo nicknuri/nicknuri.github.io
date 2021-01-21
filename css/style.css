@@ -258,13 +258,25 @@ figure {
 
 #colorlib-hero {
   min-height: 500px;
-  background: #fff url(../images/loader.gif) no-repeat center center;
+  background: transparent url(../images/loader.gif) no-repeat center center;
+ 
+
   width: 100%;
   float: left;
-  margin-bottom: 10em;
-  clear: both; }
+  margin-bottom: 4em;
+  clear: both; 
+
+
+}
   #colorlib-hero .flexslider {
-    border: none;
+   
+    background-color: transparent;
+
+    
+    
+
+
+
     z-index: 1;
     margin-bottom: 0; }
     #colorlib-hero .flexslider .slides {
@@ -467,6 +479,14 @@ body.offcanvas {
 
 .hire {
   padding: 2em;
+
+  -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+-moz-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+-ms-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+-o-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+
+
   background: #f9bf3f; }
   .hire h2 {
     line-height: 1.5; }
@@ -562,11 +582,20 @@ body.offcanvas {
   position: relative;
   margin-top: 5px;
   margin-left: 30px;
+
+  
+  
+
   margin-bottom: 10px;
   clear: both; }
 
 .timeline-centered .timeline-entry .timeline-entry-inner {
   position: relative;
+  -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -ms-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -o-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
   margin-left: -20px; }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
@@ -579,9 +608,9 @@ body.offcanvas {
   -ms-border-radius: 50%;
   border-radius: 50%;
   text-align: center;
-  -moz-box-shadow: 0 0 0 5px #f2f3f7;
-  -webkit-box-shadow: 0 0 0 5px #f2f3f7;
-  box-shadow: 0 0 0 5px #f2f3f7;
+  -moz-box-shadow: 0 0 0 5px  rgb(222, 226, 228);
+  -webkit-box-shadow: 0 0 0 5px rgb(222, 226, 228);
+  box-shadow: 0 0 0 5px rgb(222, 226, 228);
   line-height: 40px;
   float: left; }
   .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon i {
@@ -756,6 +785,18 @@ body.offcanvas {
     .services.color-6 .icon:after {
       border-color: #4054b2 transparent transparent transparent; }
 
+.progress-wrap{
+   
+  padding: 5px;
+  -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -ms-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -o-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+
+}
+
+
 .progress-wrap h3 {
   font-size: 16px;
   font-family: "Quicksand", Arial, sans-serif;
@@ -763,9 +804,10 @@ body.offcanvas {
 
 .progress {
   height: 6px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background: #f2f3f7;
+ 
+
+
+ 
   overflow: visible; }
 
 .progress-bar {
@@ -850,7 +892,15 @@ body.offcanvas {
     height: 100px;
     display: table;
     text-align: center;
-    background: #f2f3f7;
+   
+    -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    -ms-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    -o-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+ 
+
+
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
@@ -889,7 +939,16 @@ body.offcanvas {
 .blog-entry {
   width: 100%;
   float: left;
-  background: #fff;
+  padding: 5px;
+  
+  -webkit-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -ms-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  -o-box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 0px 56px -8px rgba(0, 0, 0, 0.17);
+  border-bottom: 2px solid #2c98f0;
+
+
   margin-bottom: 3em; }
   @media screen and (max-width: 768px) {
     .blog-entry {
@@ -917,7 +976,7 @@ body.offcanvas {
     margin-bottom: 25px;
     line-height: auto;
     font-weight: 500;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
     font-family: "Quicksand", Arial, sans-serif; }
     .blog-entry .desc h3 a {
