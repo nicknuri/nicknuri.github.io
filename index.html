@@ -1,3 +1,63 @@
+<!--
+<?php
+
+$error = "";
+$success = "";
+
+if($_POST){
+
+	if(!$_POST["name"]){
+
+		$error .= "- The name field is empty.<br>";
+	}
+	if(!$_POST["email"]){
+
+		$error .= "- The email field is empty.<br>";
+
+	}else if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)=== false) {
+		
+				$error .= "The <strong>email address</strong> is invalid. <br>";
+		
+	}
+
+	if(!$_POST["subject"]){
+
+		$error .= "- The subject field is empty.<br>";
+	}
+	if(!$_POST["message"]){
+
+		$error .= "- The message field is empty.<br>";
+	}
+
+
+	if($error != ""){
+
+		$error = '<div class="alert alert-danger" role="alert"> <p> <strong>Change a few things up and try submitting the form again!</strong> </p>'.$error. '</div>';
+	
+	}
+	else{
+
+		$emailTo = "burkhonov.nuriddin@gmail.com";
+		$sender = $_POST['name'];
+		$subject = $_POST['subject'];
+		$message = $_POST['message'];
+		$headers = "From:   ".$_POST['email'];
+
+		if(mail($emailTo, $subject, $message, $headers, $sender)){
+
+			$success = '<div class="alert alert-success" role="alert"> <p>Your message was sent. I\'ll get back to you soon!</p> </div>';
+		}else{
+
+			$error = '<div class="alert alert-danger" role="alert"> <p>Your message could not be sent. Try again later!</p></div>';
+		}
+	}
+
+}
+
+
+?>
+-->
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -50,15 +110,7 @@
 	<![endif]-->
 
 	<style type="text/css">
-		#background1{
-			background: url(images/img_bg_1.png) no-repeat 0 20%;
-			
-		
-		}
 
-		#background2{
-			background: url(images/img_bg_2.jpg) no-repeat 0 20%;
-		}
 	</style>
 
 </head>
@@ -67,7 +119,7 @@
 
 	<div id="colorlib-page">
 		<div class="container-wrap">
-		
+		<div><? echo $error.$success  ?></div>
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 			<div class="text-center">
@@ -80,12 +132,13 @@
 					<ul>
 						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
 						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="projects">Projects</a></li>
+						
 						<li><a href="#" data-nav-section="skills">Skills</a></li>
 						<li><a href="#" data-nav-section="education">Education</a></li>
 						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="work">Achievement</a></li>
-						<li><a href="#" data-nav-section="blog">Blog</a></li>
+						<li><a href="#" data-nav-section="achievement">Achievements</a></li>
+						<li><a href="#" data-nav-section="project">Projects</a></li>
+						<li><a href="#" data-nav-section="blog">Blogs</a></li>
 						<li><a href="#" data-nav-section="contact">Contact</a></li>
 					</ul>
 				</div>
@@ -112,13 +165,14 @@
 			<section id="colorlib-hero" class="js-fullheight" data-section="home">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-				   	<li id="background1"">
-				   		<div class="overlay"></div>
+				   	<li style="z-index: 1; background-image: url(images/img_bg_1.png);">
+						 
+						   <div class="overlay"></div>
 				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
+							   <div class="row">
+								   <div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+									   <div class="slider-text-inner js-fullheight">
+										   <div class="desc">
 						   					<h1>Hi! <br>I'm Nuriddin</h1>
 						   					<h2>Find more information at <a href="https://github.com/" target="_blank">github.com</a></h2>
 												<p><a class="btn btn-primary btn-learn" href="documents/cv.pdf">Download CV <i class="icon-download4"></i></a></p>
@@ -128,9 +182,10 @@
 					   		</div>
 				   		</div>
 				   	</li>
-				   	<li id="background2"">
-				   		<div class="overlay"></div>
+				   	<li style="z-index: 1; background-image: url(images/img_bg_2.png);" >
+						   <div class="overlay"></div>
 				   		<div class="container-fluid">
+							  
 				   			<div class="row">
 					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
 					   				<div class="slider-text-inner">
@@ -607,7 +662,7 @@
 				</div>
 			</section>
 
-			<section class="colorlib-work" data-section="work">
+			<section class="colorlib-work" data-section="achievement">
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
@@ -617,18 +672,21 @@
 					</div>
 					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
 						<div class="col-md-12">
-							<p class="work-menu"><span><a href="#" class="active">Special achievements</a></span> <span><a href="#">Group projects</a></span></p>
+							<p class="work-menu"><span><achievements href="#" class="active">Achievements</a></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project">
-								<embed src="https://clone-51bc0.web.app/"  style="width:100%; height: 100%;" type="">
+							<div class="project" style="background-image: url(images/img-1.jpg);">
 								<div class="desc">
 									<div class="con">
-										<h3><a href="https://clone-51bc0.web.app/">ProjectOne_amazone_clone</a></h3>
-										<span>Web application with React JS and Firebase</span>
-										
+										<h3><a href="work.html">Achievement 1</a></h3>
+										<span>Successful Machine Tools Lab</span>
+										<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
 									</div>
 								</div>
 							</div>
@@ -649,7 +707,7 @@
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-							<div class="project" style="background-image: url(images/img-3.jpg);">
+							<div class="project" style="display: none; background-image: url(images/img-3.jpg);">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="work.html">Achievement 3</a></h3>
@@ -664,7 +722,7 @@
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<div class="project" style="background-image: url(images/img-4.jpg);">
+							<div class="project" style="display: none; background-image: url(images/img-4.jpg);">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="http://fondkarimov.uz/en/news/lola-karimova-tillyaeva-obyavila-imena-obladatelej-ocherednyh-obrazovatelnyh-grantov-fonda-karimova-na-obuchenie-za-rubezhom/">Achivement 4</a></h3>
@@ -678,12 +736,63 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-md-12 animate-box">
+							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+						</div>
 						
 						
 					</div>
+					
+				</div>
+			</section>
+
+			<section class="colorlib-blog" data-section="project">
+				<div class="colorlib-narrow-content">
 					<div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Projects</span>
+							<h2 class="colorlib-heading">Recent Projects</h2>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+							<embed src="https://clone-51bc0.web.app/" style="width: 100%; height: 100%" type="">
+							<div class="blog-entry">
+								<div class="desc">
+									<span><small>June, 2020 </small> | <small> Amazon Clone WebApp using ReactJS and Firebase </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+									<h3><a href="myblog/index.html">Full-stack amazon-clone ecomerse website. REACT&FIREBASE</a></h3>
+									<a href="https://clone-51bc0.web.app/">Go and check the webapp</a>
+									<p>if you want to look closer look at the work has been done go and clone the github repository. Remember to open <b>firebase</b> and <b>stripe</b> account if you want to run it changing some staffs inside.</p>
+									<a href="github.com">Go to the repositiry to check</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="blog-entry">
+								<a href="myblog/index.html" class="blog-img"><img src="images/blog-2.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<div class="desc">
+									<span><small>March, 2020 </small> | <small> Software Development </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+									<h3><a href="myblog/index.html">GitHub student pack access</a></h3>
+									<p>In this blog I am going to quickly describe how to get access to the student pack of the GitHub.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="blog-entry">
+								<a href="myblog/index.html" class="blog-img"><img src="images/blog-3.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<div class="desc">
+									<span><small>February 14, 2020 </small> | <small> Web Design </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+									<h3><a href="myblog/index.html">Make website from scratch</a></h3>
+									<p>How to make a portfolio website using Visual Studio Code.</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div  class="col-md-12 animate-box">
+							<p id="loadMore"><a href="myblog/index.html" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
 						</div>
 					</div>
 				</div>
@@ -732,8 +841,8 @@
 
 					</div>
 					<div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a href="myblog/index.html" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+						<div  class="col-md-12 animate-box">
+							<p id="loadMore"><a href="myblog/index.html" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
 						</div>
 					</div>
 				</div>
@@ -874,7 +983,7 @@
 				return false;
 			}else{
 
-				$("#error").html('<div class="alert alert-danger" role="alert"> <p> <strong>Sent successfully! I will get back to you soon</strong> </p></div>');
+				$("#error").html('<div class="alert alert-success" role="alert"> <p> <strong>Sent successfully! I will get back to you soon</strong> </p></div>');
 
 				return true;
 			}
@@ -883,6 +992,22 @@
 
 
 		});
+
+		// load More function for boxes
+		$( document ).ready(function () {
+  $(".moreBox").slice(0, 3).show();
+    if ($(".blogBox:hidden").length != 0) {
+      $("#loadMore").show();
+    }   
+    $("#loadMore").on('click', function (e) {
+      e.preventDefault();
+      $(".moreBox:hidden").slice(0, 6).slideDown();
+      if ($(".moreBox:hidden").length == 0) {
+        $("#loadMore").fadeOut('slow');
+      }
+    });
+  });
+
 
 	</script>
 
