@@ -201,7 +201,7 @@ figure {
               -o-transform: scaleX(1);
               transform: scaleX(1); }
         #colorlib-aside #colorlib-main-menu ul li.active a {
-          color: #2c98f0; }
+          color: rgb(44, 152, 240); }
           #colorlib-aside #colorlib-main-menu ul li.active a:after {
             visibility: visible;
             -webkit-transform: scaleX(1);
@@ -209,12 +209,14 @@ figure {
             -ms-transform: scaleX(1);
             -o-transform: scaleX(1);
             transform: scaleX(1); }
+
+
+
   #colorlib-aside .colorlib-footer {
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
     font-weight: 700;
-    color:rgb(78, 78, 201);
-    text-shadow: 1px 1px gray;
+    color:rgb(44, 152, 240);
     margin-top: 20px;
     padding: 0 20px;
     width: 100%; }
