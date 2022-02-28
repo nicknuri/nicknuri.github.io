@@ -12,8 +12,8 @@
 *
 * ======================================================= */
 @keyframes body{
-  from{background-color: lightblue;}
-  to {background-color: #B09FE5;}
+  from{background-color: white ;}
+  to {background-color: rgb(192,192,192);}
 }
 
 body {
@@ -80,7 +80,7 @@ figure {
 
 @keyframes blueToWhite{
   from {background-color: white;}
-  to {background-color: lightblue;}
+  to {background-color: rgb(192, 192, 192);} 
 }
 
 #colorlib-aside {
@@ -121,7 +121,7 @@ figure {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%;
-    border: 3px solid lightblue;
+    border: 3px solid rgb(192,192,192);
    }
 
 
@@ -245,7 +245,7 @@ figure {
   margin: 0 auto; }
 
 #colorlib-main {
-  background-image: repeating-linear-gradient(to right, lightblue, white);
+  background-image: repeating-linear-gradient(to right, rgb(192, 192, 192), white);
   width: calc(100% - 300px);
   float: right;
   -webkit-transition: 0.5s;
@@ -332,11 +332,11 @@ figure {
           margin: 0;
           padding: 0;
           color: black;
-          text-shadow: 2px 2px lightblue;
-          font-family: "Playfair Display", Georgia, serif; }
+          text-shadow: 2px 2px rgb(192, 192, 192);
+          font-family: "Playfair Display", Georgia, serif; ; }
         #colorlib-hero .flexslider .slider-text > .slider-text-inner h1 {
           margin-bottom: 10px;
-          font-size: 45px;
+          font-size: 40px;
 
           line-height: 1.2;
           font-weight: 510; }
